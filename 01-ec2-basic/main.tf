@@ -46,7 +46,7 @@ resource "aws_security_group" "instance" {
   description = "Security Group del laboratorio 01-ec2-basic"
   vpc_id      = data.aws_vpc.default.id
 
-  # Permitimos SSH para que el alumno pueda conectarse si tiene un Key Pair.
+  # Permitimos SSH para conectarse si se tiene un Key Pair.
   # El origen se configura con una variable para poder restringirlo.
   ingress {
     description = "SSH"
@@ -116,16 +116,141 @@ resource "aws_instance" "lab" {
     #!/bin/bash
     dnf install -y nginx
     cat > /usr/share/nginx/html/index.html <<'HTML'
+
     <!DOCTYPE html>
     <html lang="es">
-      <head>
-        <meta charset="utf-8" />
-        <title>Laboratorio Terraform EC2</title>
-      </head>
-      <body>
-        <h1>Hola Joan Amengual Mesquida</h1>
-        <p>Si ves esta página, la instancia, el Security Group y el user_data funcionan.</p>
-      </body>
+
+    <head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Terraform AWS Lab</title>
+
+    <style>
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+
+    body{
+
+        font-family:
+            "Segoe UI",
+            Arial,
+            sans-serif;
+
+        background:
+            linear-gradient(
+                135deg,
+                #0f172a,
+                #1e293b
+            );
+
+        color:white;
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .container{
+
+        text-align:center;
+        background:
+           rgba(255,255,255,0.08);
+        backdrop-filter: blur(12px);
+        padding:50px;
+        border-radius:20px;
+        box-shadow:
+            0 10px 40px rgba(0,0,0,.40);
+        max-width:800px;
+    }
+
+    .badge{
+
+        display:inline-block;
+        background:#2563eb;
+        padding:8px 20px;
+        border-radius:999px;
+        margin-bottom:20px;
+        font-size:14px;
+        font-weight:bold;
+    }
+
+    h1{
+
+        font-size:48px;
+        margin-bottom:20px;
+    }
+
+    p{
+
+        font-size:20px;
+        opacity:0.9;
+        line-height:1.6;
+    }
+
+    .tech{
+
+        margin-top:30px;
+    }
+
+    .tech span{
+
+        display:inline-block;
+        background:#334155;
+        padding:10px 16px;
+        margin:5px;
+        border-radius:10px;
+    }
+
+    .footer{
+
+        margin-top:30px;
+        font-size:14px;
+        opacity:0.7;
+    }
+
+    </style>
+
+    </head>
+
+    <body>
+
+    <div class="container">
+
+    <div class="badge">
+    AWS • Terraform • EC2
+    </div>
+
+    <h1>
+    🚀 Infraestructura desplegada
+    correctamente
+    </h1>
+
+    <p>
+    Esta instancia EC2 ha sido creada
+    automáticamente mediante Terraform.
+    Si ves esta página significa que:
+    </p>
+
+    <div class="tech">
+        <span>✅ Terraform Apply</span>
+        <span>✅ EC2</span>
+        <span>✅ Security Group</span>
+        <span>✅ User Data</span>
+        <span>✅ Nginx</span>
+    </div>
+    <div class="footer">
+    Laboratorio AWS creado por
+    <strong>Martín del Valle</strong>
+    </div>
+    </div>
+    </body>
     </html>
     HTML
     systemctl enable --now nginx

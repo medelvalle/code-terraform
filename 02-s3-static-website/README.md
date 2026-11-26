@@ -11,6 +11,7 @@ terraform fmt        # formatea el código
 terraform validate   # comprueba que la sintaxis es correcta
 terraform plan       # muestra qué se va a crear, sin crear nada
 terraform apply      # crea la infraestructura en AWS
+terraform output website_https_url    # Nos devuelve la url de nuestra web en el bucket
 ```
 
 Abre la web:

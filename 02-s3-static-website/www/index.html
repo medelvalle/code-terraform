@@ -1,60 +1,253 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Joan Amengual</title>
-    <style>
-      :root {
-        color-scheme: light;
-      }
-      body {
-        margin: 0;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        font-family: Georgia, "Times New Roman", serif;
-        background: #f4f1ea;
-        color: #1f2933;
-      }
-      main {
-        max-width: 36rem;
-        padding: 2.5rem;
-        background: #fff;
-        border: 1px solid #d9d3c5;
-      }
-      p.kicker {
-        margin: 0 0 0.5rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        font-size: 0.75rem;
-        color: #6b7280;
-      }
-      h1 {
-        margin: 0 0 1rem;
-        font-size: 2rem;
-      }
-      p {
-        line-height: 1.55;
-        margin: 0 0 1rem;
-      }
-      p:last-child {
-        margin-bottom: 0;
-        color: #6b7280;
-        font-size: 0.95rem;
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <p class="kicker">Sitio de ejemplo</p>
-      <h1>Joan Amengual</h1>
-      <p>
-        Página personal de ejemplo para el laboratorio de Terraform. El HTML
-        vive en un bucket S3 y se publica como web estática, sin servidor que
-        administrar.
-      </p>
-      <p>Desplegado con Terraform y Amazon S3.</p>
-    </main>
-  </body>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Martín del Valle | AWS S3 Static Website</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    min-height:100vh;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #1e293b,
+            #334155
+        );
+
+    color:#ffffff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+}
+
+.card{
+
+    width:100%;
+    max-width:900px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    backdrop-filter: blur(12px);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    border-radius:24px;
+
+    padding:50px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.40);
+}
+
+.badge{
+
+    display:inline-block;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:#f59e0b;
+
+    color:#111827;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+}
+
+h1{
+
+    font-size:3rem;
+
+    margin-bottom:15px;
+}
+
+.subtitle{
+
+    color:#cbd5e1;
+
+    font-size:1.2rem;
+
+    margin-bottom:35px;
+
+    line-height:1.6;
+}
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(180px,1fr)
+        );
+
+    gap:20px;
+
+    margin-top:25px;
+}
+
+.feature{
+
+    background:
+      rgba(255,255,255,.05);
+
+    padding:20px;
+
+    border-radius:16px;
+}
+
+.feature h3{
+
+    margin-bottom:10px;
+
+    color:#fbbf24;
+}
+
+.feature p{
+
+    color:#cbd5e1;
+
+    line-height:1.5;
+}
+
+.footer{
+
+    margin-top:40px;
+
+    padding-top:25px;
+
+    border-top:
+      1px solid
+      rgba(255,255,255,.10);
+
+    color:#94a3b8;
+
+    font-size:.95rem;
+}
+
+.highlight{
+
+    color:#60a5fa;
+    font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="badge">
+☁ AWS S3 Static Website
+</div>
+
+<h1>Martín del Valle</h1>
+
+<p class="subtitle">
+
+Sitio web estático desplegado completamente en
+<span class="highlight">Amazon S3</span>
+mediante
+<span class="highlight">Terraform</span>.
+
+Este laboratorio demuestra el aprovisionamiento
+automatizado de infraestructura cloud utilizando
+Infrastructure as Code (IaC).
+
+</p>
+
+<div class="grid">
+
+<div class="feature">
+
+<h3>Terraform</h3>
+
+<p>
+Infraestructura definida mediante código,
+versionable y reproducible.
+</p>
+
+</div>
+
+<div class="feature">
+
+<h3>Amazon S3</h3>
+
+<p>
+Hosting estático sin servidores
+ni mantenimiento operativo.
+</p>
+
+</div>
+
+<div class="feature">
+
+<h3>DevOps</h3>
+
+<p>
+Despliegue automatizado y
+gestión moderna de recursos cloud.
+</p>
+
+</div>
+
+<div class="feature">
+
+<h3>Cloud Computing</h3>
+
+<p>
+Arquitectura escalable utilizando
+servicios nativos de AWS.
+</p>
+
+</div>
+
+</div>
+
+<div class="footer">
+
+Proyecto desplegado por
+<strong>Martín del Valle</strong>
+
+<br>
+
+Licenciado en Automatización y Robótica |
+Máster en Big Data y Ciencia de Datos
+
+</div>
+
+</div>
+
+</body>
+
 </html>
